@@ -57,7 +57,7 @@ let BM=new Set(),SP=new Set(),MEMO={},Q='';
 try{BM=new Set(JSON.parse(localStorage.getItem('bm')||'[]'));SP=new Set(JSON.parse(localStorage.getItem('sp')||'[]'));MEMO=JSON.parse(localStorage.getItem('memo')||'{}')||{}}catch(e){}
 const save=()=>{try{localStorage.setItem('bm',JSON.stringify([...BM]));localStorage.setItem('sp',JSON.stringify([...SP]));localStorage.setItem('memo',JSON.stringify(MEMO))}catch(e){}};
 /* Personal Cloud Sync: fill these two values after deploying your private Apps Script web app. */
-const CLOUD_URL='https://script.google.com/a/macros/snu.ac.kr/s/AKfycbxYbJS3zYm66-W8x1FhoikbHfak1yopvKzurt15YuDkJQ3CGIHKzniXKyO8xBM9d7jp/exec';
+const CLOUD_URL='https://script.google.com/macros/s/AKfycbxYbJS3zYm66-W8x1FhoikbHfak1yopvKzurt15YuDkJQ3CGIHKzniXKyO8xBM9d7jp/exec';
 const CLOUD_TOKEN='iw2LS5hXWnCRdWkvGk31NCA2ZWu_5kxZ';
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmtD=d=>d?new Date(d+'T00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',weekday:'short'}):'TBA';
