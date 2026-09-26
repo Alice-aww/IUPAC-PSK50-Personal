@@ -25,7 +25,7 @@ h2{font-size:16px;margin:22px 0 6px;padding-bottom:3px;border-bottom:2px solid v
 .row{display:flex;gap:8px;padding:7px 4px;border-top:1px solid var(--line)}.row.bm{background:var(--bmb)}
 .row .m{flex:1;min-width:0;overflow-wrap:anywhere}
 .st{border:0;background:none;font-size:22px;line-height:1;color:#e8a800;cursor:pointer;padding:0 2px;align-self:flex-start}
-#q{width:100%;box-sizing:border-box;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font:inherit}
+#q,#spq{width:100%;box-sizing:border-box;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font:inherit}
 .ab{background:var(--card);border-radius:8px;padding:10px 14px;margin-top:10px}.ab p{margin:0 0 .7em}
 .memoBox{margin-top:14px}.memoBox h3{font-size:15px;margin:0 0 6px}.memoBox textarea{width:100%;min-height:150px;box-sizing:border-box;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font:inherit;resize:vertical}.memoMeta{display:flex;justify-content:flex-end;color:var(--mut);font-size:12px;margin-top:4px}.stickyTabs{position:sticky;top:var(--headH,78px);z-index:4;background:var(--bg);padding:4px 0 2px}.exportBar{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.actionBtn{border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);padding:8px 11px;font:inherit;cursor:pointer}.bmfilters{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}.bmfilters select,.bmfilters input{width:100%;box-sizing:border-box;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font:inherit}.bmfilters .wide{grid-column:1/-1}@media(max-width:600px){.bmfilters{grid-template-columns:1fr}.bmfilters .wide{grid-column:auto}}
 .ix{padding:2px 0}.ix span{display:inline-block;min-width:180px}.ix a{margin-right:8px}
@@ -57,7 +57,7 @@ let BM=new Set(),SP=new Set(),MEMO={},Q='';
 try{BM=new Set(JSON.parse(localStorage.getItem('bm')||'[]'));SP=new Set(JSON.parse(localStorage.getItem('sp')||'[]'));MEMO=JSON.parse(localStorage.getItem('memo')||'{}')||{}}catch(e){}
 const save=()=>{try{localStorage.setItem('bm',JSON.stringify([...BM]));localStorage.setItem('sp',JSON.stringify([...SP]));localStorage.setItem('memo',JSON.stringify(MEMO))}catch(e){}};
 /* Personal Cloud Sync: fill these two values after deploying your private Apps Script web app. */
-const CLOUD_URL='https://script.google.com/macros/s/AKfycbxYbJS3zYm66-W8x1FhoikbHfak1yopvKzurt15YuDkJQ3CGIHKzniXKyO8xBM9d7jp/exec';
+const CLOUD_URL='PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
 const CLOUD_TOKEN='iw2LS5hXWnCRdWkvGk31NCA2ZWu_5kxZ';
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmtD=d=>d?new Date(d+'T00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',weekday:'short'}):'TBA';
